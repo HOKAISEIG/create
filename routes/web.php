@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return VIEW('home',['name' =>"ahri"]);
-});
-
+Route::get('/home', [WelcomeController::class, 'index']);
+   
